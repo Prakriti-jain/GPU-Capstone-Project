@@ -1,10 +1,6 @@
 # CUDA Batch Image Processor
 This project applies a Gaussian blur to multiple images in parallel using CUDA.
 
-## Requirements
-- CUDA Toolkit 12.0+
-- OpenCV 4.x (for image I/O)
-- A directory with 10+ images (e.g., .jpg or .png)
 
 ## Compilation
 make
@@ -48,8 +44,3 @@ The codebase is structured to leverage CUDA for parallel image processing:
 - **Memory Management**: Explicit CUDA memory allocation (`cudaMalloc`) and transfer (`cudaMemcpy`) for efficiency.
 - **Error Handling**: Checks for file loading failures and directory existence.
 - **Style**: Follows Google C++ Style Guide (consistent naming, comments, modularity).
-
-### Lessons Learned
-- Tuning block size (16x16) balances thread utilization and overhead.
-- Edge cases (e.g., pixels near image borders) require careful handling to avoid artifacts.
-- Processing large datasets (e.g., 10+ 4K images) highlights the importance of GPU memory management.
